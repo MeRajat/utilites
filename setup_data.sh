@@ -1,3 +1,7 @@
+# This file creates validation dataset and create a sample for sanity check of the model
+# It assumes data is in 
+
+
 mkdir valid
 # No of validation files
 ls train |sort -R |tail -100 |while read file; do
@@ -8,7 +12,9 @@ mkdir -p sample/train
 mkdir -p sample/valid 
 # 100 is number of sample files in train
 ls train |sort -R |tail -100 |while read file; do  
-    mv train/$file sample/train
+   cd .
+   ccd ..
+   mv train/$file sample/train
 done
 # 20 is no of valid files 
 ls train |sort -R |tail -20 |while read file; do
