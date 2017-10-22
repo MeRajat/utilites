@@ -12,8 +12,6 @@ mkdir -p sample/train
 mkdir -p sample/valid 
 # 100 is number of sample files in train
 ls train |sort -R |tail -100 |while read file; do  
-   cd .
-   ccd ..
    mv train/$file sample/train
 done
 # 20 is no of valid files 
