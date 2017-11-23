@@ -18,3 +18,16 @@ done
 ls train |sort -R |tail -20 |while read file; do
     cp train/$file sample/valid
 done
+
+
+
+# When train data contains folder for different category
+for dir in train/*/
+do
+    dir=${dir%*/}
+    echo ${dir##*/}
+    mkdir -p "valid/${dir##*/}"
+    ls "train/${dir##*/}" |sort -R |tail -20 |while read file; do
+    	mv "train/${dir##*/}/$file" "valid/${dir##*/}"
+	done
+done
