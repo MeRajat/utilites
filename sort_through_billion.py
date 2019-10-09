@@ -6,19 +6,19 @@ import numpy as np
 
 class PriorityQueue(object):
     def __init__(self, qty: int = 1000):
-        self.queue: List[int] = [0] * qty   ## create placeholder
+        self.queue: List[int] = [0] * qty
     
-    def _sort(self): ## Insertion sort O(n^2)
+    def _sort(self):
         for i in range(1, len(self.queue), 1):
             val: int = self.queue[i]
             j: int = i-1
-            while j >=0 and self.queue[j] < val:
+            while j >=0 and self.queue[j] > val:
                 self.queue[j+1] = self.queue[j]
                 j -= 1
             self.queue[j+1] = val
         
         
-    def insert(self, value: int): 
+    def insert(self, value: int):
         max_number: int = 0 
         if self.queue[0] < value:
             self.queue[0] = value 
@@ -36,8 +36,5 @@ queue = PriorityQueue()
 _ = [queue.insert(i) for i in arr]  ## insert into queue while maintaining priority 
  
  ## Top 1000 
- 
 print(queue.queue)
-        
-        
         
