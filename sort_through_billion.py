@@ -33,7 +33,7 @@ arr = np.random.randint(0,100000000000, size = 100000000)
 np.random.shuffle(arr)
 
 queue = PriorityQueue()
-_ = [queue.insert(i) for i in arr] . ## insert into queue while maintaining priority 
+_ = [queue.insert(i) for i in arr]  ## insert into queue while maintaining priority 
  
  ## Top 1000 
  
